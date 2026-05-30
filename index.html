@@ -25,6 +25,7 @@
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#freelance" class="nav-link">Freelance</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -75,18 +76,81 @@
                     </div>
                 </div>
             </div>
+            <!-- SRE Production Dashboard — Hero Visual -->
             <div class="hero-visual">
-                <div class="profile-hero-wrapper">
-                    <div class="profile-hero-image">
-                        <img src="assets/images/profile.png" alt="Naveen Gudi - Sr. SRE & Lead DevOps Engineer">
+                <div class="sre-dashboard-animation">
+                    <div class="dashboard-frame">
+                        <div class="dashboard-header">
+                            <div class="dash-dot red"></div>
+                            <div class="dash-dot yellow"></div>
+                            <div class="dash-dot green"></div>
+                            <span class="dash-title">Production Monitoring</span>
+                            <span class="dash-status live"><i class="fas fa-circle"></i> LIVE</span>
+                        </div>
+                        <div class="dashboard-body">
+                            <div class="dash-widget uptime-widget">
+                                <svg class="uptime-ring" viewBox="0 0 100 100">
+                                    <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                                    <circle class="ring-fill" cx="50" cy="50" r="42"/>
+                                </svg>
+                                <div class="uptime-text">
+                                    <span class="uptime-value">99.9%</span>
+                                    <span class="uptime-label">Uptime</span>
+                                </div>
+                            </div>
+                            <div class="dash-metrics">
+                                <div class="metric-card healthy">
+                                    <i class="fas fa-server"></i>
+                                    <div class="metric-info">
+                                        <span class="metric-num">24/24</span>
+                                        <span class="metric-name">Pods Running</span>
+                                    </div>
+                                </div>
+                                <div class="metric-card healthy">
+                                    <i class="fas fa-database"></i>
+                                    <div class="metric-info">
+                                        <span class="metric-num">3/3</span>
+                                        <span class="metric-name">DB Replicas</span>
+                                    </div>
+                                </div>
+                                <div class="metric-card warning">
+                                    <i class="fas fa-memory"></i>
+                                    <div class="metric-info">
+                                        <span class="metric-num">72%</span>
+                                        <span class="metric-name">Memory</span>
+                                    </div>
+                                </div>
+                                <div class="metric-card healthy">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div class="metric-info">
+                                        <span class="metric-num">0</span>
+                                        <span class="metric-name">Incidents</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dash-graph">
+                                <div class="graph-label">Request Latency (p99)</div>
+                                <svg class="live-graph" viewBox="0 0 300 60" preserveAspectRatio="none">
+                                    <polyline class="graph-line" points="0,45 20,42 40,38 60,40 80,35 100,30 120,32 140,28 160,25 180,30 200,22 220,20 240,18 260,22 280,15 300,12"/>
+                                    <polyline class="graph-line-glow" points="0,45 20,42 40,38 60,40 80,35 100,30 120,32 140,28 160,25 180,30 200,22 220,20 240,18 260,22 280,15 300,12"/>
+                                </svg>
+                                <div class="graph-value">18ms <i class="fas fa-arrow-down"></i></div>
+                            </div>
+                            <div class="dash-deploy">
+                                <div class="deploy-bar">
+                                    <div class="deploy-progress"></div>
+                                </div>
+                                <span class="deploy-text"><i class="fas fa-rocket"></i> v2.4.1 deployed to production</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="profile-badge">
-                        <i class="fas fa-award"></i>
-                        <span>Sr. SRE | Lead DevOps</span>
-                    </div>
+                    <div class="float-badge badge-k8s"><i class="fas fa-dharmachakra"></i></div>
+                    <div class="float-badge badge-grafana"><i class="fas fa-chart-area"></i></div>
+                    <div class="float-badge badge-shield"><i class="fas fa-lock"></i></div>
                 </div>
             </div>
         </div>
+
         <a href="#about" class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
@@ -345,7 +409,7 @@
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Kubernetes</span>
                         <span class="skill-tag">Helm</span>
-                        <span class="skill-tag">Rancher / K3s</span>
+                        <span class="skill-tag">Rancher / Kubernetes</span>
                         <span class="skill-tag">Service Mesh</span>
                         <span class="skill-tag">Platform Engineering</span>
                     </div>
@@ -426,16 +490,16 @@
                             Enterprise SaaS platform for validation lifecycle management in Life Sciences & Pharma (GxP compliance).
                         </p>
                         <ul class="timeline-points">
-                            <li><strong>On-Premises Infrastructure</strong> — own the full VGPF platform deployment on K3s clusters with Harbor registry and Envoy Gateway</li>
+                            <li><strong>On-Premises Infrastructure</strong> — own the full VGPF platform deployment on Kubernetes clusters with Harbor registry and Envoy Gateway</li>
                             <li><strong>CI/CD Pipelines (GitHub Actions)</strong> — built shared workflows with self-hosted runners for infra & application deployment</li>
                             <li><strong>Infrastructure as Code</strong> — Terraform, Terragrunt, ARM templates, and shell automation for repeatable provisioning</li>
                             <li><strong>Observability Stack</strong> — Prometheus + Grafana + Loki for centralized monitoring, alerting, and log aggregation</li>
                             <li><strong>Security & Compliance</strong> — HashiCorp Vault, TLS management, OS hardening for GxP-regulated environments</li>
                             <li><strong>Data Platform</strong> — PostgreSQL, Redis, RabbitMQ, MinIO administration and reliability</li>
-                            <li><strong>Container Orchestration</strong> — Kubernetes (K3s/AKS), Helm charts, Harbor container registry, Envoy service gateway</li>
+                            <li><strong>Container Orchestration</strong> — Kubernetes (AKS), Helm charts, Harbor container registry, Envoy service gateway</li>
                         </ul>
                         <div class="timeline-tags">
-                            <span>K3s</span><span>GitHub Actions</span><span>Terraform</span>
+                            <span>Kubernetes</span><span>GitHub Actions</span><span>Terraform</span>
                             <span>Helm</span><span>Harbor</span><span>Envoy</span>
                             <span>Vault</span><span>PostgreSQL</span><span>Grafana</span>
                         </div>
@@ -575,11 +639,95 @@
         </div>
     </section>
 
+    <!-- ===== FREELANCING SECTION ===== -->
+    <section class="section freelance" id="freelance">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">06.</span> Freelance Services
+            </h2>
+            <div class="freelance-intro-block">
+                <h3>Available for Freelance & Consulting</h3>
+                <p>
+                    Need an experienced SRE/DevOps engineer for your project? I help startups and enterprises 
+                    build reliable infrastructure, set up CI/CD pipelines, and achieve production-grade observability.
+                </p>
+                <div class="freelance-availability">
+                    <span class="availability-dot"></span>
+                    <span>Open to new projects</span>
+                </div>
+            </div>
+            <div class="freelance-services-grid">
+                <div class="freelance-card">
+                    <div class="freelance-card-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h4>Cloud Infrastructure Setup</h4>
+                    <p>AWS / Azure architecture design, VPC, networking, Kubernetes clusters, and production-ready environments from scratch.</p>
+                    <div class="freelance-price">Starting $80/hr</div>
+                </div>
+
+                <div class="freelance-card">
+                    <div class="freelance-card-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h4>CI/CD Pipeline Engineering</h4>
+                    <p>GitHub Actions, Jenkins, GitOps workflows with automated testing, security scanning, and zero-downtime deployments.</p>
+                    <div class="freelance-price">Starting $70/hr</div>
+                </div>
+
+                <div class="freelance-card">
+                    <div class="freelance-card-icon">
+                        <i class="fas fa-chart-area"></i>
+                    </div>
+                    <h4>Monitoring & Observability</h4>
+                    <p>Prometheus, Grafana, Loki stack setup with custom dashboards, alerting rules, SLI/SLO frameworks, and on-call setup.</p>
+                    <div class="freelance-price">Starting $75/hr</div>
+                </div>
+
+                <div class="freelance-card">
+                    <div class="freelance-card-icon">
+                        <i class="fas fa-dharmachakra"></i>
+                    </div>
+                    <h4>Kubernetes & Containerization</h4>
+                    <p>K8s cluster setup, Helm charts, service mesh, container security, registry management, and scaling strategies.</p>
+                    <div class="freelance-price">Starting $85/hr</div>
+                </div>
+
+                <div class="freelance-card">
+                    <div class="freelance-card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Security & Compliance</h4>
+                    <p>Vault integration, TLS automation, OS hardening, secrets management, and compliance-ready infrastructure (GxP, SOC2).</p>
+                    <div class="freelance-price">Starting $90/hr</div>
+                </div>
+
+                <div class="freelance-card">
+                    <div class="freelance-card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>AI-Powered Automation</h4>
+                    <p>Python scripts, intelligent alerting, predictive scaling, ChatOps bots, and custom automation to eliminate toil.</p>
+                    <div class="freelance-price">Starting $85/hr</div>
+                </div>
+            </div>
+
+            <div class="freelance-cta">
+                <a href="mailto:naveen.cloudops77@gmail.com?subject=Freelance%20Inquiry" class="btn btn-primary">
+                    <i class="fas fa-handshake"></i> Hire Me
+                </a>
+                <a href="https://www.linkedin.com/in/naveen-gudi/" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-linkedin"></i> Message on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== CONTACT SECTION ===== -->
     <section class="section contact" id="contact">
         <div class="container">
             <h2 class="section-title">
-                <span class="title-number">06.</span> Let's Connect
+                <span class="title-number">07.</span> Let's Connect
             </h2>
             <div class="contact-content">
                 <div class="contact-text">
@@ -590,15 +738,15 @@
                     </p>
                 </div>
                 <div class="contact-methods">
-                    <a href="mailto:naveengudi@example.com" class="contact-card">
+                    <a href="mailto:naveen.cloudops77@gmail.com" class="contact-card">
                         <i class="fas fa-envelope"></i>
                         <span>Email Me</span>
                     </a>
-                    <a href="https://linkedin.com/in/naveengudi" target="_blank" rel="noopener" class="contact-card">
+                    <a href="https://www.linkedin.com/in/naveen-gudi/" target="_blank" rel="noopener" class="contact-card">
                         <i class="fab fa-linkedin"></i>
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://github.com/naveengudi" target="_blank" rel="noopener" class="contact-card">
+                    <a href="https://github.com/NAVITECHDEVOPS" target="_blank" rel="noopener" class="contact-card">
                         <i class="fab fa-github"></i>
                         <span>GitHub</span>
                     </a>
@@ -619,6 +767,12 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- Resume Watermark Button — Bottom Right -->
+    <a href="resume.html" class="resume-watermark" title="View Resume">
+        <i class="fas fa-file-alt"></i>
+        <span>Resume</span>
+    </a>
 
     <script src="js/main.js"></script>
 </body>

@@ -151,11 +151,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Observe elements for fade-in
-    document.querySelectorAll(
-        '.skill-category, .project-card, .timeline-item, .leadership-card, .about-grid, .contact-content'
-    ).forEach(el => {
+    // Observe elements with different animation styles
+    // Skill categories & leadership cards - staggered fade-in
+    document.querySelectorAll('.skills-grid, .leadership-grid, .projects-grid').forEach(grid => {
+        grid.classList.add('stagger-children');
+    });
+
+    document.querySelectorAll('.skill-category, .leadership-card, .project-card').forEach(el => {
         el.classList.add('fade-in');
+        observer.observe(el);
+    });
+
+    // Timeline items - slide from left
+    document.querySelectorAll('.timeline-item').forEach(el => {
+        el.classList.add('slide-in-left');
+        observer.observe(el);
+    });
+
+    // About section - scale in
+    document.querySelectorAll('.about-grid').forEach(el => {
+        el.classList.add('scale-in');
+        observer.observe(el);
+    });
+
+    // Contact - slide from right
+    document.querySelectorAll('.contact-content').forEach(el => {
+        el.classList.add('slide-in-right');
+        observer.observe(el);
+    });
+
+    // Section titles
+    document.querySelectorAll('.section-title').forEach(el => {
         observer.observe(el);
     });
 

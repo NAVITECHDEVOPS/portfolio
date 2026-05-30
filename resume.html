@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume — Naveen Gudi | Lead SRE & DevOps Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0f1a;
+            --bg-card: #111827;
+            --border: #1e293b;
+            --accent: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --green: #10b981;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --font: 'Inter', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Header */
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .resume-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .resume-title {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+            font-weight: 500;
+        }
+
+        .resume-contact {
+            text-align: right;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .resume-contact a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .resume-contact div {
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.4rem;
+        }
+
+        .resume-contact i {
+            width: 14px;
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+
+        /* Section */
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+
+        .resume-section-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resume-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Experience */
+        .exp-item {
+            margin-bottom: 1.8rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+        }
+
+        .exp-item.current {
+            border-left-color: var(--accent);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-role {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .exp-date {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-family: var(--mono);
+        }
+
+        .exp-company {
+            font-size: 0.88rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-project {
+            font-size: 0.8rem;
+            color: var(--accent-purple);
+            font-style: italic;
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-category {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 0.8rem;
+            margin-bottom: 0.4rem;
+            padding-left: 0;
+        }
+
+        .exp-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exp-points li {
+            font-size: 0.8rem;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+            padding-left: 1.2rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .exp-points li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Skills Table */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .skills-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skills-table td {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.8rem;
+            vertical-align: top;
+        }
+
+        .skills-table td:first-child {
+            font-weight: 600;
+            color: var(--accent);
+            width: 200px;
+            white-space: nowrap;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skills-table td:last-child {
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 0.78rem;
+        }
+
+        /* Education */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-item strong {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .edu-item span {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-family: var(--mono);
+        }
+
+        .edu-sub {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* Freelance */
+        .freelance-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .freelance-list li {
+            font-size: 0.82rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+        }
+
+        /* Print Button */
+        .print-actions {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            margin-left: 1rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--accent); }
+
+        /* Print Styles */
+        @media print {
+            body { background: #fff; padding: 0; }
+            .resume-container {
+                background: #fff;
+                border: none;
+                box-shadow: none;
+                padding: 1.5rem;
+                max-width: 100%;
+            }
+            .resume-name { -webkit-text-fill-color: #0f172a; color: #0f172a; }
+            .resume-section-title { color: #0369a1; }
+            .resume-section-title::after { background: #cbd5e1; }
+            .exp-company { color: #0369a1; }
+            .exp-project { color: #6d28d9; }
+            .exp-points li::before { color: #0369a1; }
+            .skills-table td:first-child { color: #0369a1; }
+            .print-actions { display: none; }
+            * { color: #1e293b !important; }
+            .exp-item { border-left-color: #cbd5e1; }
+            .exp-item.current { border-left-color: #0369a1; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .resume-container { padding: 1.5rem; }
+            .resume-header { flex-direction: column; gap: 1rem; }
+            .resume-contact { text-align: left; }
+            .resume-contact div { justify-content: flex-start; }
+            .exp-header { flex-direction: column; }
+            .skills-table td:first-child { width: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-actions">
+        <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-download"></i> Download PDF
+        </button>
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </div>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="resume-header">
+            <div>
+                <h1 class="resume-name">Gudi Naveen</h1>
+                <p class="resume-title">Lead Site Reliability Engineer | Sr. DevOps & Cloud Architect | Release Manager</p>
+            </div>
+            <div class="resume-contact">
+                <div><i class="fas fa-envelope"></i> <a href="mailto:naveen.cloudops77@gmail.com">naveen.cloudops77@gmail.com</a></div>
+                <div><i class="fas fa-phone"></i> +91-9985109284</div>
+                <div><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/naveen-gudi/" target="_blank">linkedin.com/in/naveen-gudi</a></div>
+                <div><i class="fab fa-github"></i> <a href="https://github.com/NAVITECHDEVOPS" target="_blank">github.com/NAVITECHDEVOPS</a></div>
+                <div><i class="fas fa-map-marker-alt"></i> Chennai, Tamilnadu</div>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Professional Summary</h2>
+            <p style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.7;">
+                Lead Site Reliability Engineer & DevOps Architect with 6+ years driving production reliability, platform engineering, and cloud-native transformation across enterprise environments. Proven track record of leading SRE/DevOps teams, defining organizational standards for CI/CD, observability, and infrastructure automation. Spearheaded multi-cloud strategies (AWS + Azure), built zero-downtime release frameworks, and mentored engineering teams. Combines deep technical expertise with strategic leadership in Release Management, Incident Response, and Platform Scalability.
+            </p>
+
+            <div class="exp-category">Technical Leadership & Strategy</div>
+            <ul class="exp-points">
+                <li>Led and scaled DevOps/SRE teams in designing highly available, secure, and cost-optimized cloud architectures</li>
+                <li>Drove technical strategy for CI/CD modernization, cloud migration, and platform reliability across the organization</li>
+                <li>Conducted architecture reviews and defined engineering standards for infrastructure, deployment, security, and monitoring</li>
+                <li>Mentored and coached 10+ engineers on AWS, Kubernetes, IaC, and SRE best practices</li>
+                <li>Owned sprint planning, capacity management, and cross-team technical decision-making</li>
+                <li>Championed POC-driven innovation — evaluated EKS, ECS, Lambda, API Gateway, Step Functions for enterprise adoption</li>
+                <li>Led zero-downtime deployment strategy implementation (Blue/Green, Canary, Progressive Delivery)</li>
+                <li>Architected centralized observability platforms using Prometheus, Grafana, Loki, and CloudWatch</li>
+                <li>Designed Terraform module standardization for multi-account, multi-environment provisioning</li>
+                <li>Managed full environment lifecycle (Dev → QA → Pre-Prod → Production) ensuring release consistency</li>
+                <li>Coordinated cross-functional delivery with Development, QA, Security, and Operations stakeholders</li>
+            </ul>
+
+            <div class="exp-category">CI/CD & Release Engineering</div>
+            <ul class="exp-points">
+                <li>Designed and owned enterprise CI/CD platforms supporting 20+ microservices with automated testing, security scanning, and progressive delivery</li>
+                <li>Built end-to-end pipeline architectures (Jenkins, GitHub Actions) covering build, test, security scan, deploy, and release gates</li>
+                <li>Defined Git branching strategies and release management workflows for parallel development at scale</li>
+                <li>Standardized artifact lifecycle management with Maven, Nexus, and Artifactory</li>
+                <li>Integrated code quality gates (SonarQube), SAST/DAST scanning, and automated regression into pipelines</li>
+                <li>Managed release coordination across JIRA, ServiceNow, and Slack-based ChatOps workflows</li>
+            </ul>
+
+            <div class="exp-category">Cloud Infrastructure (AWS & IaC)</div>
+            <ul class="exp-points">
+                <li>Extensive expertise in Amazon Web Services (AWS), specializing in configuration, maintenance, and monitoring of core services</li>
+                <li>Designed and deployed infrastructure using Infrastructure as Code (IaC) with Terraform</li>
+                <li>Networking: Configuring VPC with subnets, security groups, NAT instances, and Route 53 DNS records</li>
+                <li>Compute: Managing and configuring EC2 instances, Elastic Load Balancers (ELB/ALB), and Auto-Scaling Groups (ASG)</li>
+                <li>Storage: Utilizing S3 for scalable object storage and managing EBS, Snapshots, and RDS</li>
+                <li>Security & Identity: Managing user and access control using IAM</li>
+                <li>Monitoring & Logging: Configuring CloudWatch for resource monitoring, alarm creation, and integration with Auto-Scaling, along with CloudTrail and Lambda</li>
+            </ul>
+
+            <div class="exp-category">Observability & Site Reliability Engineering (SRE)</div>
+            <ul class="exp-points">
+                <li>Architected full-stack observability platforms (Prometheus + Grafana + Loki) for unified metrics, logs, and tracing</li>
+                <li>Defined SLI/SLO/Error Budget frameworks and built executive dashboards for reliability reporting</li>
+                <li>Designed Alertmanager configurations with intelligent routing, deduplication, and escalation policies</li>
+                <li>Led incident response processes — on-call rotations, blameless postmortems, and MTTR reduction initiatives (60% improvement)</li>
+                <li>Implemented service discovery for auto-scraping across EC2, Kubernetes, and hybrid environments</li>
+            </ul>
+
+            <div class="exp-category">Platform Engineering & Container Orchestration</div>
+            <ul class="exp-points">
+                <li>Led Kubernetes platform strategy — cluster architecture, namespace governance, RBAC, network policies, and scaling</li>
+                <li>Standardized containerization practices (Docker, multi-stage builds, security scanning) across engineering teams</li>
+                <li>Managed configuration at scale using Ansible, Helm, and GitOps-based deployment models</li>
+                <li>Operated multi-cluster Kubernetes environments via Rancher with centralized lifecycle management</li>
+            </ul>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Technical Skills</h2>
+            <table class="skills-table">
+                <tr><td>Operating Systems</td><td>Linux, CentOS, Ubuntu, Windows</td></tr>
+                <tr><td>Version Control</td><td>Git, GitHub, Bitbucket</td></tr>
+                <tr><td>Cloud Technologies</td><td>AWS, Azure</td></tr>
+                <tr><td>CI/CD Tools</td><td>Maven, Jenkins, GitHub Actions, SonarQube, Nexus</td></tr>
+                <tr><td>IaC & Config Mgmt</td><td>Terraform, Terragrunt, Ansible, ARM Templates</td></tr>
+                <tr><td>Monitoring/Logging</td><td>Prometheus, Grafana, Loki, CloudWatch, Zabbix, Nagios</td></tr>
+                <tr><td>Containerization</td><td>Docker, Kubernetes, Helm, Harbor, Rancher</td></tr>
+                <tr><td>Security</td><td>HashiCorp Vault, TLS/SSL, Envoy, OS Hardening</td></tr>
+                <tr><td>Data & Messaging</td><td>PostgreSQL, Redis, RabbitMQ, MinIO</td></tr>
+                <tr><td>Project Management</td><td>Jira, ServiceNow, Slack</td></tr>
+            </table>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Professional Work Experience</h2>
+
+            <!-- ValGenesis -->
+            <div class="exp-item current">
+                <div class="exp-header">
+                    <span class="exp-role">Lead SRE / Sr. Site Reliability Engineer</span>
+                    <span class="exp-date">Mar 2025 – Present</span>
+                </div>
+                <div class="exp-company">ValGenesis Inc. — SGP (SmartGxP Platform) Team</div>
+                <div class="exp-project">Project: SmartGxP Platform (On-Premises & Cloud Infrastructure)</div>
+                <div class="exp-desc">Enterprise SaaS platform for validation lifecycle management in Life Sciences & Pharma (GxP compliance).</div>
+
+                <div class="exp-category">Platform Ownership & SRE Leadership</div>
+                <ul class="exp-points">
+                    <li>Own end-to-end VGPF platform reliability — Kubernetes clusters, Harbor registry, Envoy Gateway, and full stack operations</li>
+                    <li>Architected shared CI/CD platform (GitHub Actions) with self-hosted runners, reusable workflows, and automated deployments</li>
+                    <li>Defined IaC standards using Terraform, Terragrunt, ARM templates — enabling repeatable, auditable provisioning</li>
+                    <li>Built enterprise observability stack (Prometheus + Grafana + Loki) with SLI dashboards and proactive alerting</li>
+                    <li>Lead security & compliance initiatives — HashiCorp Vault, TLS automation, OS hardening for GxP-regulated environments</li>
+                    <li>Manage data platform reliability — PostgreSQL HA, Redis clustering, RabbitMQ, MinIO object storage</li>
+                    <li>Drive container orchestration strategy — Kubernetes (AKS), Helm chart governance, Harbor registry, Envoy service mesh</li>
+                    <li>Own on-premises infrastructure — bare-metal provisioning, networking, storage, and capacity planning</li>
+                </ul>
+            </div>
+
+            <!-- Saama Technologies -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-role">Sr. DevOps Engineer / SRE / Release Manager</span>
+                    <span class="exp-date">Feb 2023 – Feb 2025</span>
+                </div>
+                <div class="exp-company">Saama Technologies</div>
+                <div class="exp-project">Project: Site Reliability Engineering (R&D Product)</div>
+                <div class="exp-desc">Saama Technologies is a leading business analytics and AI company focused on the Life Sciences industry, revolutionizing clinical development and R&D with AI-driven solutions.</div>
+
+                <div class="exp-category">SRE and Operations</div>
+                <ul class="exp-points">
+                    <li>Led DevOps and SRE team initiatives by defining architectural standards and ensuring end-to-end reliability across cloud environments</li>
+                    <li>Provided technical leadership training over the team for CI/CD modernization, Kubernetes adoption, and cloud-native transformation efforts</li>
+                    <li>Conducted architectural reviews for infrastructure, deployment pipelines, security posture, and monitoring frameworks</li>
+                    <li>Mentored team members on AWS best practices, container orchestration, Infrastructure as Code, and observability engineering</li>
+                    <li>Coordinated major release activities, sprint planning, and technical decision-making for production upgrades</li>
+                    <li>Designed and executed multiple Proof-of-Concepts (POCs) for cloud migration, scalability, automation, and cost-optimization initiatives</li>
+                    <li>Performed POCs for AWS EKS, automated scaling strategies, and GitOps-based deployment models</li>
+                    <li>Evaluated advanced deployment strategies such as Blue-Green, Canary, and Progressive Delivery for zero-downtime releases</li>
+                    <li>Conducted POCs for Prometheus-Grafana-based observability stack, including custom exporters, dashboards, and alerting workflows</li>
+                    <li>Built POCs for Terraform module standardization, multi-account structure automation, and secure environment provisioning</li>
+                    <li>Gained hands-on experience implementing Blue/Green Deployment for zero-downtime releases of production backend applications</li>
+                    <li>Developed utility scripts (Shell, Python, Groovy) to automate repetitive tasks, significantly reducing manual effort and time</li>
+                    <li>Provided 24/7 on-call support for critical production environments</li>
+                    <li>Acted as a SHIFT CO-ORDINATOR, overseeing operations, directing ticket assignment, and performing incident execution for production environment issues</li>
+                    <li>Monitored ticket and incident queues, ensuring analysis and resolution within the targeted SLA</li>
+                    <li>Coordinated cross-functionally with Development, QA, Database Administration, and IT Operations teams to ensure smooth application delivery</li>
+                </ul>
+
+                <div class="exp-category">CI/CD and Release Management</div>
+                <ul class="exp-points">
+                    <li>Designed and implemented a robust Branching Strategy to facilitate parallel development and manage source code integrity</li>
+                    <li>Built and automated jobs using Jenkins and a CI/CD Pipeline for efficient build, testing, and deployment processes</li>
+                    <li>Managed the end-to-end software delivery process, including code merge, build, and deployment across all environments (Dev, Test, Pre-Prod, Production)</li>
+                    <li>Implemented Continuous Integration, Nightly, and Branch Builds in Jenkins aligned with application release cycles</li>
+                    <li>Utilized Maven to create application artifacts (WAR/EAR files), and configured Nexus Repository Manager for centralized artifact management</li>
+                </ul>
+
+                <div class="exp-category">Containerization and Orchestration</div>
+                <ul class="exp-points">
+                    <li>Implemented Docker containerization to standardize environments, ease development, and streamline the deployment pipeline</li>
+                    <li>Created Dockerfiles, built images, and pushed them to a managed Docker private registry</li>
+                    <li>Deployed and scaled applications using Kubernetes to provide a consistent environment from Development through Production</li>
+                    <li>Responsible for the installation, configuration, and clustering of Kubernetes environments</li>
+                    <li>Implemented Load Balancing and Auto-Scaling within Kubernetes clusters to enhance application resilience and performance</li>
+                    <li>Utilized Rancher for centralized management, deployment, and operational monitoring of multiple Kubernetes clusters</li>
+                </ul>
+            </div>
+
+            <!-- Freelance -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-role">Freelance DevOps Engineer</span>
+                    <span class="exp-date">Dec 2021 – Aug 2022</span>
+                </div>
+                <div class="exp-company">Freelance Projects</div>
+                <ul class="freelance-list">
+                    <li>Think and Learn</li>
+                    <li>EbixCash</li>
+                    <li>WayCool Foods Pvt. Ltd.</li>
+                </ul>
+            </div>
+
+            <!-- Maersk / Tech Mahindra -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-role">Associate DevOps Engineer</span>
+                    <span class="exp-date">Apr 2019 – Dec 2021</span>
+                </div>
+                <div class="exp-company">Tech Mahindra (Client: Maersk — Global Container Shipping)</div>
+                <div class="exp-project">Client: Maersk (Global Container Shipping Line)</div>
+                <div class="exp-desc">Maersk is the largest container shipping line and vessel operator in the world, based in Copenhagen, Denmark, with subsidiaries and offices across 130 countries.</div>
+
+                <div class="exp-category">CI/CD and Automation</div>
+                <ul class="exp-points">
+                    <li>Created and managed Continuous Integration, Continuous Deployment, and Continuous Delivery pipelines using Jenkins declarative pipeline</li>
+                    <li>Worked with Agile teams to manage the DevOps automation process setup for multiple application releases</li>
+                    <li>Responsible for GIT Branching, Merging, and Tagging across production releases and performing builds using Jenkins with Maven build scripts</li>
+                    <li>Built and deployed customized EARs, conducted smoke testing, and troubleshot build/deployment issues</li>
+                </ul>
+
+                <div class="exp-category">AWS and Infrastructure</div>
+                <ul class="exp-points">
+                    <li>Experienced with AWS VPC setup, Subnet Configurations, Security management, Load balancing setup, and dynamic Auto-Scaling for production environments</li>
+                    <li>Managed the data management lifecycle on AWS S3 different classes and lifecycle rules</li>
+                    <li>Hands-on experience in monitoring servers and services on AWS using CloudWatch</li>
+                    <li>Knowledgeable in AWS CloudFront, Route53, IAM custom policy generation, and CloudFormation</li>
+                </ul>
+
+                <div class="exp-category">Process and Operations</div>
+                <ul class="exp-points">
+                    <li>Involved in all phases of the SDLC from Requirement gathering, Design, Build, Test, Deploy, and environment setup/monitoring</li>
+                    <li>Monitored Jenkins builds and environments, troubleshooting issues across different stages of the build and deployment process</li>
+                    <li>Experienced in Windows and Linux server monitoring and troubleshooting</li>
+                    <li>Collaborated with Development managers, test teams, Scrum Masters, and SMEs on code deployments, branch cutting, merging, and environment setup</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Education</h2>
+            <div class="edu-item">
+                <strong>B.Tech (ECE)</strong>
+                <span>2015 – 2019</span>
+            </div>
+            <div class="edu-sub">JNTU Ananthapur</div>
+        </section>
+    </div>
+</body>
+</html>

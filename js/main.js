@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Lead DevOps Engineer',
         'Release Manager',
         'Cloud Architect (AWS + Azure)',
-        'AI/ML Ops & Python Automation',
-        'Future Engineering Manager'
+        'AI/ML Ops & Python Automation'
     ];
     let titleIndex = 0;
     let charIndex = 0;

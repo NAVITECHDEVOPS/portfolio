@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Typing Effect for Hero ---
     const titles = [
+        'Sr. Site Reliability Engineer',
         'Lead DevOps Engineer',
-        'Cloud Architect (AWS + Azure)',
         'Release Manager',
+        'Cloud Architect (AWS + Azure)',
         'AI/ML Ops & Python Automation',
-        'Platform Engineer & SRE',
         'Future Engineering Manager'
     ];
     let titleIndex = 0;

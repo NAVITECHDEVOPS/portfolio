@@ -826,6 +826,14 @@ img {
     margin-top: 0.25rem;
 }
 
+.timeline-header .location {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    margin-top: 0.15rem;
+    font-family: var(--font-mono);
+}
+
 .company-desc {
     color: var(--text-muted);
     font-size: 0.88rem;
